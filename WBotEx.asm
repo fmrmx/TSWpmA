@@ -96,6 +96,29 @@ C1:
 			  fstp dword ptr [esp-4]
 			  jb C1_1
 			  jge C1_2
+C1_1:
+			  push -1
+			  fild DWORD PTR [esp]
+			  fstp DWORD PTR [esp]
+			  fld DWORD PTR [esp]
+			  fld dword ptr [My_X_Location]
+			  fmul
+			  fstp DWORD PTR [My_X_Location]
+			  add esp,4
+			  push -1
+			  fild DWORD PTR [esp]
+			  fstp DWORD PTR [esp]
+			  fld DWORD PTR [esp]
+			  fld dword ptr [My_Y_Location]
+			  fmul
+			  fstp DWORD PTR [My_Y_Location]
+			  add esp,4
+			  push 180
+			  fild DWORD PTR [esp]
+			  fstp DWORD PTR [esp]
+			  push 1
+			  call Degrees_X
+			  jmp endC2
               
               
               
