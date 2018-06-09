@@ -52,6 +52,60 @@ void WBotEx(
 			  je Testz
 			  jmp DontEnd
               
+Tesz:
+			  cmp edx,0
+			  je T1
+			  jmp DontEnd
+T1:
+			  cmp ebx,0
+			  je end
+DontEnd:
+			  push [Enemy_X_Location_Address]
+			  call ReadMemory
+			  pop eax
+			  push [Enemy_Y_Location_Address]
+			  call ReadMemory
+			  pop edx
+			  push [Enemy_Z_Location_Address]
+			  call ReadMemory
+			  pop ebx
+			  mov [Enemy_X_Location],eax
+			  mov [Enemy_Y_Location],edx
+			  mov [Enemy_Z_Location],ebx
+			  fld dword ptr [Enemy_X_Location]
+			  fld dword ptr [My_X_Location]
+			  fsub
+			  fstp dword ptr [My_X_Location]
+			  fld dword ptr [Enemy_Y_Location]
+			  fld dword ptr [My_Y_Location]
+			  fsub
+			  fstp dword ptr [My_Y_Location]
+			  fld dword ptr [Enemy_Z_Location]
+			  fld dword ptr [My_Z_Location]
+			  fsub
+			  fstp dword ptr [My_Z_Location]
+			  fldz
+			  fld dword ptr [My_Y_Location]
+			  fcom
+			  fstsw ax
+              sahf
+			  fstp dword ptr [esp-4]
+			  fstp dword ptr [esp-4]
+			  jb C1
+			  jmp endC1
+
+C1:
+			  fldz
+			  fld dword ptr [My_X_Location]
+			  fcom
+			  fstsw ax
+              sahf
+			  fstp dword ptr [esp-4]
+			  fstp dword ptr [esp-4]
+			  jb C1_1
+			  jge C1_2
+              
+              
               
               
               
