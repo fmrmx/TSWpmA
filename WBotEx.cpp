@@ -1,7 +1,11 @@
-void WBotEx(float Current_X_Degress_Address,float X_Degress_Address,float Current_Y_Degress_Address,
-            float Y_Degress_Address,float Get_If_Aiming_Address,float My_X_Location_Address,float My_Y_Location_Address,
-                float My_Z_Location_Address,float Enemy_X_Location_Address,float Enemy_Y_Location_Address,
-                float Enemy_Z_Location_Address)
+void WBotEx(    
+                uint32 Current_X_Degress_Address,    uint32 X_Degress_Address,
+                uint32 Current_Y_Degress_Address,    uint32 Y_Degress_Address,
+                uint32 Get_If_Aiming_Address,        uint32 My_X_Location_Address,
+                uint32 My_Y_Location_Address,        uint32 My_Z_Location_Address,
+                uint32 Enemy_X_Location_Address,     uint32 Enemy_Y_Location_Address,
+                uint32 Enemy_Z_Location_Address
+            )
 	    
 {
 	float My_X_Location,My_Y_Location,My_Z_Location,Enemy_X_Location,Enemy_Y_Location,Enem​y_Z_Location,temp;
