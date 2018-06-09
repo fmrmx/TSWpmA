@@ -3,8 +3,7 @@ void WBotEx(float Current_X_Degress_Address,float X_Degress_Address,float Curren
                 float My_Z_Location_Address,float Enemy_X_Location_Address,float Enemy_Y_Location_Address,
                 float Enemy_Z_Location_Address)
 	    
-            { My_X_Location,My_Y_Location,My_Z_Location,Enemy_X_Location,Enemy_Y_Location,Enemy_Z_Location }
-            float Returns[12];
+            { My_X_Location,My_Y_Location,My_Z_Location,Enemy_X_Location,Enemy_Y_Location,Enemy_Z_Location } float Returns[12];
             
             
         Start:
